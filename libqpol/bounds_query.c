@@ -329,4 +329,3 @@ int qpol_policy_get_userbounds_iter(const qpol_policy_t *policy, qpol_iterator_t
 
 	return STATUS_SUCCESS;
 }
-

@@ -249,4 +249,3 @@ int qpol_filename_trans_get_filename(const qpol_policy_t * policy, const qpol_fi
 
 	return STATUS_SUCCESS;
 }
-

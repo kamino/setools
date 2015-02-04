@@ -228,4 +228,3 @@ ssize_t qpol_bunzip(FILE *f, char **data)
 	*data = uncompress;
 	return  total;
 }
-
