@@ -1,0 +1,12 @@
+* text=auto whitespace=space-before-tab,tab-in-indent,trailing-space
+
+.git*   text export-ignore
+
+*.c     text -whitespace
+*.h     text -whitespace
+*.i     text
+*.l     text -whitespace
+*.y     text -whitespace
+*.map   text whitespace=indent-with-non-tab,trailing-space,tabwidth=4
+*.conf  text
+*.py    text
