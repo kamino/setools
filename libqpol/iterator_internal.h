@@ -1,6 +1,6 @@
 /**
  * @file
- * Declaration of the internal interface for 
+ * Declaration of the internal interface for
  * qpol_iterator, an arbitrary valued policy component
  * iterator used to return lists of components.
  *

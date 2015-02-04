@@ -1,18 +1,18 @@
 # This is a permission map file for use in policy analysis.  This
-# file maps object permissions (read, getattr, setattr, ..., etc.) 
-# for an object class, to exactly one of the following: read, write, 
-# both, or none.  This file may be edited as long as the specific 
+# file maps object permissions (read, getattr, setattr, ..., etc.)
+# for an object class, to exactly one of the following: read, write,
+# both, or none.  This file may be edited as long as the specific
 # syntax rules are obeyed.
 #
-# For each object class, there is a set of object permissions that are 
+# For each object class, there is a set of object permissions that are
 # individually mapped to read, write, both, or none.  If a new object
 # class is added, make sure that the current number of object classes
 # is increased.
 #
 # The syntax for an object class definition is:
 # class <class_name> <num_permissions>
-# 
-# This is followed by each permission and its individual mapping to one 
+#
+# This is followed by each permission and its individual mapping to one
 # of the following:
 #
 # 	r   =	Read
@@ -20,8 +20,8 @@
 #	n   =	None
 #	b   =	Both
 #
-# Additionally, you can choose to follow the mapping with an optional  
-# permission weight value from 1 (less importance) to 10 (higher importance). 
+# Additionally, you can choose to follow the mapping with an optional
+# permission weight value from 1 (less importance) to 10 (higher importance).
 # 10 is the default weight value if one is not provided.
 #
 # Look to the examples below for further clarification.

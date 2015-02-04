@@ -1,6 +1,6 @@
  /**
  *  @file
- *  Defines the public interface for searching and iterating over roles. 
+ *  Defines the public interface for searching and iterating over roles.
  *
  *  @author Kevin Carr kcarr@tresys.com
  *  @author Jeremy A. Mowery jmowery@tresys.com
@@ -52,9 +52,9 @@ extern "C"
 /**
  *  Get an iterator for roles declared in the policy.
  *  @param policy The policy with which to create the iterator.
- *  @param iter Iterator of type qpol_role_t* returned; 
+ *  @param iter Iterator of type qpol_role_t* returned;
  *  the caller is responsible for calling qpol_iterator_destroy to
- *  free memory used; it is important to note that the iterator 
+ *  free memory used; it is important to note that the iterator
  *  is valid only as long as the policy is unchanged.
  *  @return Returns 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *iter will be NULL.
@@ -63,7 +63,7 @@ extern "C"
 
 /**
  *  Get the integer value associated with a role; values range from
- *  1 to the number of declared roles. 
+ *  1 to the number of declared roles.
  *  @param policy The policy associated with the role.
  *  @param datum The role from which to get the value.
  *  @param value Pointer to the integer to set to value. Must be non-NULL.
@@ -76,10 +76,10 @@ extern "C"
  *  Get an iterator for the set of roles dominated by a role.
  *  @param policy The policy associated with the role.
  *  @param datum The role from which to get the dominated roles.
- *  @param dominates Iterator of type qpol_role_t* returned; 
+ *  @param dominates Iterator of type qpol_role_t* returned;
  *  the caller is responsible for calling qpol_iterator_destroy to
  *  free memory used; it is important to note that the iterator is
- *  valid only as long as the policy is unchanged. Note: By 
+ *  valid only as long as the policy is unchanged. Note: By
  *  convention a role always dominates itself, so the user of this
  *  iterator should always check for this case.
  *  @return Returns 0 on success and < 0 on failure; if the call fails,
@@ -92,7 +92,7 @@ extern "C"
  *  Get an iterator for the set of types assigned to a role.
  *  @param policy The policy associated with the role.
  *  @param datum The role from which to get the types.
- *  @param types Iterator of type qpol_type_t* returned; 
+ *  @param types Iterator of type qpol_type_t* returned;
  *  the caller is responsible for calling qpol_iterator_destroy to
  *  free memory used; it is important to note that the iterator
  *  is valid only as long as the policy is unchanged.

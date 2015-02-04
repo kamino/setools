@@ -42,11 +42,11 @@ extern "C"
  *  Get an iterator for the typebounds types in a policy.
  *  @param policy The policy from which to create the iterator.
  *  @param iter Iterator over items of type qpol_isid_t returned.
- *  The caller is responsible for calling qpol_iterator_destroy 
+ *  The caller is responsible for calling qpol_iterator_destroy
  *  to free memory used by this iterator.
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
- *  @return 0 on success and < 0 on failure; if the call fails, 
+ *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *iter will be NULL.
  */
 	extern int qpol_policy_get_typebounds_iter(const qpol_policy_t *policy, qpol_iterator_t **iter);
@@ -81,11 +81,11 @@ extern "C"
  *  Get an iterator for the rolebounds types in a policy.
  *  @param policy The policy from which to create the iterator.
  *  @param iter Iterator over items of type qpol_isid_t returned.
- *  The caller is responsible for calling qpol_iterator_destroy 
+ *  The caller is responsible for calling qpol_iterator_destroy
  *  to free memory used by this iterator.
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
- *  @return 0 on success and < 0 on failure; if the call fails, 
+ *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *iter will be NULL.
  */
 	extern int qpol_policy_get_rolebounds_iter(const qpol_policy_t *policy, qpol_iterator_t **iter);
@@ -120,11 +120,11 @@ extern "C"
  *  Get an iterator for the userbounds types in a policy.
  *  @param policy The policy from which to create the iterator.
  *  @param iter Iterator over items of type qpol_isid_t returned.
- *  The caller is responsible for calling qpol_iterator_destroy 
+ *  The caller is responsible for calling qpol_iterator_destroy
  *  to free memory used by this iterator.
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
- *  @return 0 on success and < 0 on failure; if the call fails, 
+ *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *iter will be NULL.
  */
 	extern int qpol_policy_get_userbounds_iter(const qpol_policy_t *policy, qpol_iterator_t **iter);

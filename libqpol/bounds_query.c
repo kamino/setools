@@ -36,7 +36,7 @@ int qpol_typebounds_get_parent_name(const qpol_policy_t *policy, const qpol_type
 {
 	type_datum_t *internal_datum = NULL;
 	policydb_t *db = NULL;
-	
+
 	if (policy == NULL || datum == NULL || name == NULL) {
 		if (name != NULL)
 			*name = NULL;
@@ -64,7 +64,7 @@ int qpol_typebounds_get_child_name(const qpol_policy_t *policy, const qpol_typeb
 {
 	type_datum_t *internal_datum = NULL;
 	policydb_t *db = NULL;
-	
+
 	if (policy == NULL || datum == NULL || name == NULL) {
 		if (name != NULL)
 			*name = NULL;
@@ -145,7 +145,7 @@ int qpol_rolebounds_get_parent_name(const qpol_policy_t *policy, const qpol_role
 {
 	role_datum_t *internal_datum = NULL;
 	policydb_t *db = NULL;
-	
+
 	if (policy == NULL || datum == NULL || name == NULL) {
 		if (name != NULL)
 			*name = NULL;
@@ -173,7 +173,7 @@ int qpol_rolebounds_get_child_name(const qpol_policy_t *policy, const qpol_roleb
 {
 	role_datum_t *internal_datum = NULL;
 	policydb_t *db = NULL;
-	
+
 	if (policy == NULL || datum == NULL || name == NULL) {
 		if (name != NULL)
 			*name = NULL;
@@ -240,7 +240,7 @@ int qpol_userbounds_get_parent_name(const qpol_policy_t *policy, const qpol_user
 {
 	user_datum_t *internal_datum = NULL;
 	policydb_t *db = NULL;
-	
+
 	if (policy == NULL || datum == NULL || name == NULL) {
 		if (name != NULL)
 			*name = NULL;
@@ -268,7 +268,7 @@ int qpol_userbounds_get_child_name(const qpol_policy_t *policy, const qpol_userb
 {
 	user_datum_t *internal_datum = NULL;
 	policydb_t *db = NULL;
-	
+
 	if (policy == NULL || datum == NULL || name == NULL) {
 		if (name != NULL)
 			*name = NULL;

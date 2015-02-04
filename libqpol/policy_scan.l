@@ -6,7 +6,7 @@
  * The older format just seems to be FSUSEPSID support (see fs_use_psid
  * entry.
  *
- * Author : Stephen Smalley, <sds@epoch.ncsc.mil> 
+ * Author : Stephen Smalley, <sds@epoch.ncsc.mil>
  *
  * Updated: David Caplan, <dac@tresys.com>
  *
@@ -79,7 +79,7 @@ hexval	[0-9A-Fa-f]
 %%
 \n.*				{ strncpy(linebuf[lno], yytext+1, 255);
                                   linebuf[lno][254] = 0;
-                                  lno = 1 - lno; 
+                                  lno = 1 - lno;
                                   policydb_lineno++;
 				  source_lineno++;
                                   yyless(1); }
@@ -183,9 +183,9 @@ XOR                             { return(XOR); }
 eq |
 EQ				{ return(EQUALS);}
 true |
-TRUE                            { return(CTRUE); } 
+TRUE                            { return(CTRUE); }
 false |
-FALSE                           { return(CFALSE); } 
+FALSE                           { return(CFALSE); }
 dom |
 DOM				{ return(DOM);}
 domby |
@@ -196,9 +196,9 @@ fscon |
 FSCON                           { return(FSCON);}
 portcon |
 PORTCON				{ return(PORTCON);}
-netifcon |                     
+netifcon |
 NETIFCON			{ return(NETIFCON);}
-nodecon |                     
+nodecon |
 NODECON				{ return(NODECON);}
 fs_use_psid |
 FS_USE_PSID			{ return(FSUSEPSID);}
@@ -283,16 +283,16 @@ LOW				{ return(LOW); }
 "," |
 ":" |
 ";" |
-"(" | 
+"(" |
 ")" |
-"{" | 
+"{" |
 "}" |
 "[" |
 "-" |
 "." |
 "]" |
 "~" |
-"*"				{ return(yytext[0]); } 
+"*"				{ return(yytext[0]); }
 .                               { yywarn("unrecognized character");}
 %%
 int yyerror(const char *msg)
@@ -329,7 +329,7 @@ int yywarn(const char *msg)
 void set_source_file(const char *name)
 {
 	source_lineno = 1;
-	strncpy(source_file, name, sizeof(source_file)-1); 
+	strncpy(source_file, name, sizeof(source_file)-1);
 	source_file[sizeof(source_file)-1] = '\0';
 }
 

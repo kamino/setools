@@ -223,7 +223,7 @@ static int qpol_policy_build_attrs_from_map(qpol_policy_t * policy)
 		}
 
 		/* Already exists */
-		else 
+		else
 			tmp_name = db->p_type_val_to_name[i];
 
 		tmp_type = calloc(1, sizeof(type_datum_t));

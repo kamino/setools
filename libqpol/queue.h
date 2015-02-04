@@ -10,8 +10,8 @@
 
 /* FLASK */
 
-/* 
- * A double-ended queue is a singly linked list of 
+/*
+ * A double-ended queue is a singly linked list of
  * elements of arbitrary type that may be accessed
  * at either end.
  */
@@ -42,9 +42,9 @@ queue_element_t queue_remove(queue_t);
 queue_element_t queue_head(queue_t);
 void queue_destroy(queue_t);
 
-/* 
+/*
    Applies the specified function f to each element in the
-   specified queue. 
+   specified queue.
 
    In addition to passing the element to f, queue_map
    passes the specified void* pointer to f on each invocation.
@@ -58,7 +58,7 @@ int queue_map(queue_t, int (*f) (queue_element_t, void *), void *);
 /*
    Same as queue_map, except that if f returns a non-zero status,
    then the element will be removed from the queue and the g
-   function will be applied to the element. 
+   function will be applied to the element.
  */
 void queue_map_remove_on_error(queue_t,
 			       int (*f) (queue_element_t, void *),

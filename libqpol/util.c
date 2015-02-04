@@ -198,15 +198,15 @@ ssize_t qpol_bunzip(FILE *f, char **data)
 	rewind(f);
 	if ((bzerror != BZ2_MAGICLEN) || memcmp(buf, BZ2_MAGICSTR, BZ2_MAGICLEN))
 		return -1;
-	
+
 	b = BZ2_bzReadOpen ( &bzerror, f, 0, small, NULL, 0 );
 	if ( bzerror != BZ_OK ) {
 		BZ2_bzReadClose ( &bzerror, b );
 		return -1;
 	}
-	
+
 	char *uncompress = realloc(NULL, size);
-	
+
 	while ( bzerror == BZ_OK) {
 		nBuf = BZ2_bzRead ( &bzerror, b, buf, sizeof(buf));
 		if (( bzerror == BZ_OK ) || ( bzerror == BZ_STREAM_END )) {

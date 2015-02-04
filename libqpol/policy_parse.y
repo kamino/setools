@@ -8,7 +8,7 @@
  */
 
 /*
- * Author : Stephen Smalley, <sds@epoch.ncsc.mil> 
+ * Author : Stephen Smalley, <sds@epoch.ncsc.mil>
  */
 
 /*
@@ -151,7 +151,7 @@ extern char *qpol_src_inputlim;/* end of data */
 %token SOURCE
 %token TARGET
 %token SAMEUSER
-%token FSCON PORTCON NETIFCON NODECON 
+%token FSCON PORTCON NETIFCON NODECON
 %token PIRQCON IOMEMCON IOPORTCON PCIDEVICECON
 %token FSUSEXATTR FSUSETASK FSUSETRANS FSUSEPSID
 %token GENFSCON
@@ -184,18 +184,18 @@ base_policy             : { if (define_policy(pass, 0) == -1) return -1; }
                           classes initial_sids access_vectors
                           { if (pass == 1) { if (policydb_index_classes(policydbp)) return -1; }
                             else if (pass == 2) { if (policydb_index_others(NULL, policydbp, 0)) return -1; }}
-			  opt_default_rules opt_mls te_rbac users opt_constraints 
+			  opt_default_rules opt_mls te_rbac users opt_constraints
                          { if (pass == 1) { if (policydb_index_bools(policydbp)) return -1;}
 			   else if (pass == 2) { if (policydb_index_others(NULL, policydbp, 0)) return -1;}}
 			  initial_sid_contexts opt_fs_contexts opt_fs_uses opt_genfs_contexts net_contexts opt_dev_contexts
 			;
-classes			: class_def 
+classes			: class_def
 			| classes class_def
 			;
 class_def		: CLASS identifier
 			{if (define_class()) return -1;}
 			;
-initial_sids 		: initial_sid_def 
+initial_sids 		: initial_sid_def
 			| initial_sids initial_sid_def
 			;
 initial_sid_def		: SID identifier
@@ -217,7 +217,7 @@ av_perms		: av_perms_def
 			;
 av_perms_def		: CLASS identifier '{' identifier_list '}'
 			{if (define_av_perms(FALSE)) return -1;}
-                        | CLASS identifier INHERITS identifier 
+                        | CLASS identifier INHERITS identifier
 			{if (define_av_perms(TRUE)) return -1;}
                         | CLASS identifier INHERITS identifier '{' identifier_list '}'
 			{if (define_av_perms(TRUE)) return -1;}
@@ -263,11 +263,11 @@ default_range_def	: DEFAULT_RANGE names SOURCE LOW ';'
 			{if (define_default_range(DEFAULT_TARGET_LOW_HIGH)) return -1; }
 			;
 opt_mls			: mls
-                        | 
+                        |
 			;
 mls			: sensitivities dominance opt_categories levels mlspolicy
 			;
-sensitivities	 	: sensitivity_def 
+sensitivities	 	: sensitivity_def
 			| sensitivities sensitivity_def
 			;
 /*sensitivity_def		: SENSITIVITY identifier alias_def ';'
@@ -285,15 +285,15 @@ sensitivity_def		: SENSITIVITY identifier alias_def ';'
 	                ;
 alias_def		: ALIAS names
 			;
-dominance		: DOMINANCE identifier 
+dominance		: DOMINANCE identifier
 			{if (define_dominance()) return -1;}
-                        | DOMINANCE '{' identifier_list '}' 
+                        | DOMINANCE '{' identifier_list '}'
 			{if (define_dominance()) return -1;}
 			;
 opt_categories          : categories
                         |
                         ;
-categories 		: category_def 
+categories 		: category_def
 			| categories category_def
 			;
 category_def		: CATEGORY identifier alias_def ';'
@@ -301,12 +301,12 @@ category_def		: CATEGORY identifier alias_def ';'
 			| CATEGORY identifier ';'
 			{if (define_category()) return -1;}
 			;
-levels	 		: level_def 
+levels	 		: level_def
 			| levels level_def
 			;
 level_def		: LEVEL identifier ':' id_comma_list ';'
 			{if (define_level()) return -1;}
-			| LEVEL identifier ';' 
+			| LEVEL identifier ';'
 			{if (define_level()) return -1;}
 			;
 mlspolicy		: mlspolicy_decl
@@ -369,7 +369,7 @@ typebounds_def          : TYPEBOUNDS identifier id_comma_list ';'
                         {if (define_typebounds()) return -1;}
                         ;
 opt_attr_list           : ',' id_comma_list
-			| 
+			|
 			;
 bool_def                : BOOL identifier bool_val ';'
                         { if (define_bool_tunable(0)) return -1; }
@@ -387,7 +387,7 @@ cond_stmt_def           : IF cond_expr '{' cond_pol_list '}' cond_else
                         ;
 cond_else		: ELSE '{' cond_pol_list '}'
 			{ $$ = $3; }
-			| /* empty */ 
+			| /* empty */
 			{ $$ = NULL; }
 cond_expr               : '(' cond_expr ')'
 			{ $$ = $2;}
@@ -416,9 +416,9 @@ cond_expr_prim          : identifier
                         { $$ = define_cond_expr(COND_BOOL,0, 0);
 			  if ($$ == COND_ERR) return   -1; }
                         ;
-cond_pol_list           : cond_pol_list cond_rule_def 
+cond_pol_list           : cond_pol_list cond_rule_def
                         { $$ = define_cond_pol_list((avrule_t *)$1, (avrule_t *)$2); }
-			| /* empty */ 
+			| /* empty */
 			{ $$ = NULL; }
 			;
 cond_rule_def           : cond_transition_def
@@ -691,7 +691,7 @@ ioport_context_def	: IOPORTCON number security_context_def
 pci_context_def  	: PCIDEVICECON number security_context_def
 		        {if (define_pcidevice_context($2)) return -1;}
 		        ;
-opt_fs_contexts         : fs_contexts 
+opt_fs_contexts         : fs_contexts
                         |
                         ;
 fs_contexts		: fs_context_def
@@ -700,7 +700,7 @@ fs_contexts		: fs_context_def
 fs_context_def		: FSCON number number security_context_def security_context_def
 			{if (define_fs_context($2,$3)) return -1;}
 			;
-net_contexts		: opt_port_contexts opt_netif_contexts opt_node_contexts 
+net_contexts		: opt_port_contexts opt_netif_contexts opt_node_contexts
 			;
 opt_port_contexts       : port_contexts
                         |
@@ -713,16 +713,16 @@ port_context_def	: PORTCON identifier number security_context_def
 			| PORTCON identifier number '-' number security_context_def
 			{if (define_port_context($3,$5)) return -1;}
 			;
-opt_netif_contexts      : netif_contexts 
+opt_netif_contexts      : netif_contexts
                         |
                         ;
 netif_contexts		: netif_context_def
 			| netif_contexts netif_context_def
 			;
 netif_context_def	: NETIFCON identifier security_context_def security_context_def
-			{if (define_netif_context()) return -1;} 
+			{if (define_netif_context()) return -1;}
 			;
-opt_node_contexts       : node_contexts 
+opt_node_contexts       : node_contexts
                         |
                         ;
 node_contexts		: node_context_def
@@ -767,7 +767,7 @@ ipv4_addr_def		: IPV4_ADDR
 security_context_def	: identifier ':' identifier ':' identifier opt_mls_range_def
 	                ;
 opt_mls_range_def	: ':' mls_range_def
-			|	
+			|
 			;
 mls_range_def		: mls_level_def '-' mls_level_def
 			{if (insert_separator(0)) return -1;}
@@ -791,15 +791,15 @@ names           	: identifier
 			| nested_id_set
 			{ if (insert_separator(0)) return -1; }
 			| asterisk
-                        { if (insert_id("*", 0)) return -1; 
+                        { if (insert_id("*", 0)) return -1;
 			  if (insert_separator(0)) return -1; }
 			| tilde identifier
                         { if (insert_id("~", 0)) return -1;
 			  if (insert_separator(0)) return -1; }
 			| tilde nested_id_set
-	 		{ if (insert_id("~", 0)) return -1; 
+	 		{ if (insert_id("~", 0)) return -1;
 			  if (insert_separator(0)) return -1; }
-                        | identifier '-' { if (insert_id("-", 0)) return -1; } identifier 
+                        | identifier '-' { if (insert_id("-", 0)) return -1; } identifier
 			{ if (insert_separator(0)) return -1; }
 			;
 tilde_push              : tilde
@@ -843,7 +843,7 @@ path     		: PATH
 filename		: FILENAME
 			{ yytext[strlen(yytext) - 1] = '\0'; if (insert_id(yytext + 1,0)) return -1; }
 			;
-number			: NUMBER 
+number			: NUMBER
 			{ $$ = strtoul(yytext,NULL,0); }
 			;
 ipv6_addr		: IPV6_ADDR

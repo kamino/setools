@@ -3,7 +3,7 @@
  * Defines the public API for qpol_iterator; this structure
  * is used when requesting lists of components from the policy
  * database.
- * 
+ *
  * @author Kevin Carr kcarr@tresys.com
  * @author Jeremy A. Mowery jmowery@tresys.com
  * @author Jason Tang jtang@tresys.com
@@ -49,10 +49,10 @@ extern "C"
 /**
  *  Get the item at the current position of the iterator.
  *  @param iter The iterator from which to get the item.
- *  @param item Pointer in which to store the current item; the caller is 
+ *  @param item Pointer in which to store the current item; the caller is
  *  responsible for safely casting this pointer. Unless specifically
- *  noted by the function creating the iterator, the item set 
- *  by this function should not be freed. If the iterator is at 
+ *  noted by the function creating the iterator, the item set
+ *  by this function should not be freed. If the iterator is at
  *  the end (i.e. all items have been traversed) *item will be NULL.
  *  @return Returns 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *item will be NULL.
@@ -81,7 +81,7 @@ extern "C"
 /**
  *  Get the total number of items in the list traversed by the iterator.
  *  @param iter The iterator from which to get the number of items.
- *  @param size Pointer in which to store the number of items. 
+ *  @param size Pointer in which to store the number of items.
  *  Must be non-NULL.
  *  @return Returns 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *size will be 0.

@@ -58,7 +58,7 @@ int qpol_default_object_get_class(const qpol_policy_t *policy, const qpol_defaul
 int qpol_default_object_get_user_default(const qpol_policy_t *policy, const qpol_default_object_t * datum, const char **value)
 {
 	class_datum_t *internal_datum = NULL;
-	
+
 	if (policy == NULL || datum == NULL || value == NULL) {
 		if (value != NULL)
 			*value = NULL;
@@ -85,7 +85,7 @@ int qpol_default_object_get_user_default(const qpol_policy_t *policy, const qpol
 int qpol_default_object_get_role_default(const qpol_policy_t *policy, const qpol_default_object_t * datum, const char **value)
 {
 	class_datum_t *internal_datum = NULL;
-	
+
 	if (policy == NULL || datum == NULL || value == NULL) {
 		if (value != NULL)
 			*value = NULL;

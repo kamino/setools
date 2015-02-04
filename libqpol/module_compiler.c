@@ -151,7 +151,7 @@ int declare_symbol(uint32_t symbol_type,
 						      symtab[symbol_type].table,
 						      key);
 		assert(s != NULL);
-		
+
 		if (symbol_type == SYM_LEVELS) {
 			*dest_value = ((level_datum_t *)s)->level->sens;
 		} else {
@@ -603,7 +603,7 @@ role_datum_t *get_local_role(char *id, uint32_t value, unsigned char isattr)
 		if (dest_roledatum->flavor != isattr ? ROLE_ATTRIB : ROLE_ROLE)
 			return NULL;
 	}
-	
+
 	return dest_roledatum;
 }
 
@@ -646,7 +646,7 @@ int require_symbol(uint32_t symbol_type,
 						      symtab[symbol_type].table,
 						      key);
 		assert(s != NULL);
-		
+
 		if (symbol_type == SYM_LEVELS) {
 			*dest_value = ((level_datum_t *)s)->level->sens;
 		} else {

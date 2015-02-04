@@ -8,7 +8,7 @@
  */
 
 /*
- * Author : Stephen Smalley, <sds@epoch.ncsc.mil> 
+ * Author : Stephen Smalley, <sds@epoch.ncsc.mil>
  */
 
 /*
@@ -717,7 +717,7 @@ int define_av_perms(int inherits)
 		cladatum->comdatum = comdatum;
 
 		/*
-		 * Class-specific permissions start with values 
+		 * Class-specific permissions start with values
 		 * after the last common permission.
 		 */
 		cladatum->permissions.nprim += comdatum->permissions.nprim;
@@ -738,7 +738,7 @@ int define_av_perms(int inherits)
 		}
 		if (inherits) {
 			/*
-			 * Class-specific permissions and 
+			 * Class-specific permissions and
 			 * common permissions exist in the same
 			 * name space.
 			 */
@@ -2089,7 +2089,7 @@ int define_role_attr(void)
 			free(id);
 		return 0;
 	}
-	
+
 	/* Declare a regular role */
 	if ((r = declare_role(FALSE)) == NULL)
 		return -1;
@@ -2748,30 +2748,30 @@ int define_filename_trans(void)
 			ebitmap_for_each_bit(&e_ttypes, tnode, t) {
 				if (!ebitmap_node_get_bit(tnode, t))
 					continue;
-	
+
 				for (ft = policydbp->filename_trans; ft; ft = ft->next) {
 					if (ft->stype == (s + 1) &&
 					    ft->ttype == (t + 1) &&
 					    ft->tclass == (c + 1) &&
 					    !strcmp(ft->name, name)) {
 						yyerror2("duplicate filename transition for: filename_trans %s %s %s:%s",
-							 name, 
+							 name,
 							 policydbp->p_type_val_to_name[s],
 							 policydbp->p_type_val_to_name[t],
 							 policydbp->p_class_val_to_name[c]);
 						goto bad;
 					}
-				}	
+				}
 				ft = malloc(sizeof(*ft));
 				if (!ft) {
 					yyerror("out of memory");
 					goto bad;
 				}
 				memset(ft, 0, sizeof(*ft));
-	
+
 				ft->next = policydbp->filename_trans;
 				policydbp->filename_trans = ft;
-	
+
 				ft->name = strdup(name);
 				if (!ft->name) {
 					yyerror("out of memory");
@@ -4466,7 +4466,7 @@ int define_netif_context(void)
 }
 
 int define_ipv4_node_context(void)
-{	
+{
 	char *id;
 	int rc = 0;
 	struct in_addr addr, mask;

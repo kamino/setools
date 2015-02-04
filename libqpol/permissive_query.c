@@ -31,12 +31,12 @@
 #include "qpol_internal.h"
 #include "iterator_internal.h"
 
-	
+
 int qpol_permissive_get_name(const qpol_policy_t *policy, const qpol_permissive_t * datum, const char **name)
 {
 	type_datum_t *internal_datum = NULL;
 	policydb_t *db = NULL;
-	
+
 	if (policy == NULL || datum == NULL || name == NULL) {
 		if (name != NULL)
 			*name = NULL;
@@ -49,7 +49,7 @@ int qpol_permissive_get_name(const qpol_policy_t *policy, const qpol_permissive_
 	internal_datum = (type_datum_t *)datum;
 
 	*name = db->p_type_val_to_name[internal_datum->s.value - 1];
-	
+
 	return STATUS_SUCCESS;
 }
 

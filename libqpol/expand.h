@@ -1,6 +1,6 @@
 /**
  * @file
- * 
+ *
  * Public interface for expanding a modular policy.
  *
  * @author Kevin Carr  kcarr@tresys.com
@@ -36,7 +36,7 @@ extern "C"
 
 /**
  * Expand a policy. Linking should always be done prior to calling
- * this function.  
+ * this function.
  *
  * @param base the module to expand.
  * @param neverallows if non-zero expand neverallows.

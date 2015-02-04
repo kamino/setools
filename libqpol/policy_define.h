@@ -9,9 +9,9 @@
 #ifndef _POLICY_DEFINE_H_
 #define _POLICY_DEFINE_H_
 
-/* 
+/*
  * We need the following so we have a valid error return code in yacc
- * when we have a parse error for a conditional rule.  We can't check 
+ * when we have a parse error for a conditional rule.  We can't check
  * for NULL (ie 0) because that is a potentially valid return.
  */
 #define COND_ERR ((avrule_t *)-1)

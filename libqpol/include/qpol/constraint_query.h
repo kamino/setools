@@ -46,7 +46,7 @@ extern "C"
  *  The caller is responsible for calling qpol_iterator_destroy()
  *  to free memory used by this iterator. <b>The caller must also call free()
  *  on items returned by qpol_iterator_get_item() when using this iterator.</b>
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
  *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *iter will be NULL.
@@ -73,7 +73,7 @@ extern "C"
  *  The caller is responsible for calling qpol_iterator_destroy()
  *  to free memory used by this iterator. The caller <b>should call</b>
  *  <b>free() on the strings returned by qpol_iterator_get_item().</b>
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
  *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *iter will be NULL.
@@ -89,7 +89,7 @@ extern "C"
  *  The caller is responsible for calling qpol_iterator_destroy()
  *  to free memory used by this iterator. The caller should not
  *  free the items returned by qpol_iterator_get_item().
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
  *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *iter will be NULL.
@@ -104,7 +104,7 @@ extern "C"
  *  The caller is responsible for calling qpol_iterator_destroy()
  *  to free memory used by this iterator. <b>The caller must also call free()
  *  on items returned by qpol_iterator_get_item() when using this iterator.</b>
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
  *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *iter will be NULL.
@@ -131,7 +131,7 @@ extern "C"
  *  The caller is responsible for calling qpol_iterator_destroy()
  *  to free memory used by this iterator. The caller should not
  *  free the items returned by qpol_iterator_get_item().
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
  *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *iter will be NULL.
@@ -213,7 +213,7 @@ extern "C"
  *  The caller is responsible for calling qpol_iterator_destroy()
  *  to free memory used by this iterator. <b>The caller should call
  *  free() on the strings returned by qpol_iterator_get_item().</b>
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
  *  In the case where the symbol names are types, the name of a subtracted
  *  type will be prepended with a '-' character.
@@ -231,7 +231,7 @@ extern "C"
  *  The caller is responsible for calling qpol_iterator_destroy()
  *  to free memory used by this iterator. <b>The caller must also call free()
  *  on items returned by qpol_iterator_get_item() when using this iterator.</b>
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
  *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *constr will be NULL.
@@ -247,7 +247,7 @@ extern "C"
  *  The caller is responsible for calling qpol_iterator_destroy()
  *  to free memory used by this iterator. <b>The caller must also call free()
  *  on items returned by qpol_iterator_get_item() when using this iterator.</b>
- *  It is important to note that this iterator is only valid as long 
+ *  It is important to note that this iterator is only valid as long
  *  as the policy is unmodified.
  *  @return 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *vtrans will be NULL.

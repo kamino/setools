@@ -31,11 +31,11 @@
 #include "qpol_internal.h"
 #include "iterator_internal.h"
 
-	
+
 int qpol_polcap_get_name(const qpol_policy_t *policy, const qpol_polcap_t * datum, const char **name)
 {
 	char *internal_datum = NULL;
-	
+
 	if (policy == NULL || datum == NULL || name == NULL) {
 		if (name != NULL)
 			*name = NULL;
@@ -46,7 +46,7 @@ int qpol_polcap_get_name(const qpol_policy_t *policy, const qpol_polcap_t * datu
 
 	internal_datum = (char *) datum;
 	*name = internal_datum;
-		
+
 	return STATUS_SUCCESS;
 }
 

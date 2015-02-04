@@ -61,8 +61,8 @@ extern "C"
  *  with the name perm.
  *  @param policy The policy from which to query the commons.
  *  @param perm The name of the permission to be matched. Must be non-NULL.
- *  @param commons The iterator of type qpol_common_t returned; 
- *  the user is responsible for calling qpol_iterator_destroy 
+ *  @param commons The iterator of type qpol_common_t returned;
+ *  the user is responsible for calling qpol_iterator_destroy
  *  to free memory used. It is also important to note
  *  that an iterator is only valid as long as the policy is unchanged.
  *  @return Returns 0 on success and < 0 on failure; if the call fails,
@@ -75,7 +75,7 @@ extern "C"
  *  Get an object class by name.
  *  @param policy The policy from which to get the class.
  *  @param name The name of the class; searching is case sensitive.
- *  @param obj_class Pointer in which to store the class. 
+ *  @param obj_class Pointer in which to store the class.
  *  Caller should not free this pointer.
  *  @return Returns 0 for success and < 0 for failure; if the call fails,
  *  errno will be set and *obj_class will be NULL;
@@ -85,19 +85,19 @@ extern "C"
 /**
  *  Get an iterator for object classes in the policy.
  *  @param policy The policy database from which to create the iterator.
- *  @param iter Iterator of type qpol_class_t* returned; the user 
- *  is responsible for calling qpol_iterator_destroy to free memory used. 
- *  It is also important to note that an iterator is only valid as long 
+ *  @param iter Iterator of type qpol_class_t* returned; the user
+ *  is responsible for calling qpol_iterator_destroy to free memory used.
+ *  It is also important to note that an iterator is only valid as long
  *  as the policy is unchanged.
  *  @return Returns 0 for success and < 0 for failure; if the call fails,
  *  errno will be set and *iter will be NULL.
 */
 	extern int qpol_policy_get_class_iter(const qpol_policy_t * policy, qpol_iterator_t ** iter);
 
-/** 
- *  Get the integer value associated with a class. Values range from 1 to 
+/**
+ *  Get the integer value associated with a class. Values range from 1 to
  *  the number of object classes declared in the policy.
- *  @param policy The policy with which the class is associated. 
+ *  @param policy The policy with which the class is associated.
  *  @param obj_class Class from which to get the value. Must be non-NULL.
  *  @param value Pointer to the integer to be set to value. Must be non-NULL.
  *  @return Returns 0 on success and < 0 on failure; if the call fails,
@@ -105,15 +105,15 @@ extern "C"
  */
 	extern int qpol_class_get_value(const qpol_policy_t * policy, const qpol_class_t * obj_class, uint32_t * value);
 
-/** 
+/**
  *  Get the common used by a class.
- *  @param policy The policy with which the class is associated. 
+ *  @param policy The policy with which the class is associated.
  *  @param obj_class Class from which to get the value. Must be non-NULL.
  *  @param common Pointer to the common associated with this
  *  class; the caller should not free this pointer. Not all classes have an
  *  associated common so it is possible for *common to be NULL on success.
  *  @return Returns 0 on success and < 0 on failure; if the call fails,
- *  errno will be set and *common will be NULL. 
+ *  errno will be set and *common will be NULL.
  */
 	extern int qpol_class_get_common(const qpol_policy_t * policy, const qpol_class_t * obj_class,
 					 const qpol_common_t ** common);
@@ -139,7 +139,7 @@ extern "C"
  *  @param name Pointer to the string in which to store the name.
  *  Must be non-NULL. Caller should not free the string.
  *  @return Returns 0 on success and < 0 on failure; if the call fails,
- *  errno will be set and *name will be NULL. 
+ *  errno will be set and *name will be NULL.
  */
 	extern int qpol_class_get_name(const qpol_policy_t * policy, const qpol_class_t * obj_class, const char **name);
 
@@ -158,7 +158,7 @@ extern "C"
 /**
  *  Get an iterator for commons in the policy
  *  @param policy The policy from which to create the iterator.
- *  @param iter Iterator of type qpol_common_t* returned; 
+ *  @param iter Iterator of type qpol_common_t* returned;
  *  the user is responsible for calling qpol_iterator_destroy to
  *  free memory used. It is also important to note that an iterator is
  *  only valid as long as the policy is unchanged.
@@ -182,9 +182,9 @@ extern "C"
  *  Get an iterator for the permissions included in a common.
  *  @param policy The policy associated with the common.
  *  @param common The common from which to get permissions.
- *  @param perms Iterator of type char* returned for the list of 
- *  permissions for this common. The iterator is only valid as long 
- *  as the policy is unchanged; the caller is responsible for calling 
+ *  @param perms Iterator of type char* returned for the list of
+ *  permissions for this common. The iterator is only valid as long
+ *  as the policy is unchanged; the caller is responsible for calling
  *  qpol_iterator_destroy to free memory used.
  *  @return Returns 0 on success and < 0 on failure; if the call fails,
  *  errno will be set and *perms will be NULL.
